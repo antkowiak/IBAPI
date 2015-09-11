@@ -1,5 +1,6 @@
 /**
- * 
+ * Ladder Trader is akin to the IB Book Trader.  A single click places an order at a
+ * price level on either the bid or ask side.
  */
 package com.ryanantkowiak.IBAPI;
 
