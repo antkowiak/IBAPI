@@ -1,5 +1,5 @@
 /**
- * 
+ * IBCommunicationListener - Interface for communication listeners
  */
 package com.ryanantkowiak.IBAPI;
 

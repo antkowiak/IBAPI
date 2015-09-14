@@ -1,5 +1,6 @@
 /**
- * 
+ * IBTickListener - Interfaec class that listens for tick information (such as prices, sizes, etc)
+ * from the IB TWS.
  */
 package com.ryanantkowiak.IBAPI;
 

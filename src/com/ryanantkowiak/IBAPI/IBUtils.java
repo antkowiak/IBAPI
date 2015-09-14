@@ -1,5 +1,5 @@
 /**
- * 
+ * IBUtils - Utility functions, mostly for deep copying/cloning of IB data structures
  */
 package com.ryanantkowiak.IBAPI;
 
@@ -20,14 +20,17 @@ import com.ib.client.TagValue;
 import com.ib.client.UnderComp;
 
 /**
- * @author Ryan Antkowiak (antkowiak@gmail.com)
- *
+ * @author 	Ryan Antkowiak (antkowiak@gmail.com)
+ * 
+ * @brief	Utility functions, mostly for deep copying/cloning of IB data structures
  */
 public class IBUtils
 {
 
 	/*
-	 * Deep copy Execution object
+	 * @brief	Deep copy Execution object
+	 * @param	src - the source object to clone/copy
+	 * @return	the cloned object
 	 */
 	public static Execution clone(Execution src)
 	{
@@ -63,7 +66,9 @@ public class IBUtils
 	
 	
 	/*
-	 * Deep copy ExecutionFilter object
+	 * @brief	Deep copy ExecutionFilter object
+	 * @param	src - the source object to clone/copy
+	 * @return	the cloned object
 	 */
 	public static ExecutionFilter clone(ExecutionFilter src)
 	{
@@ -98,7 +103,9 @@ public class IBUtils
 	}
 	
 	/*
-	 * Deep copy CommissionReport object
+	 * @brief	Deep copy CommissionReport object
+	 * @param	src - the source object to clone/copy
+	 * @return	the cloned object
 	 */
 	public static CommissionReport clone(CommissionReport src)
 	{
@@ -133,7 +140,9 @@ public class IBUtils
 	}
 	
 	/*
-	 * Deep copy ComboLeg object
+	 * @brief	Deep copy ComboLeg object
+	 * @param	src - the source object to clone/copy
+	 * @return	the cloned object
 	 */
 	public static ComboLeg clone(ComboLeg src)
 	{
@@ -171,7 +180,9 @@ public class IBUtils
 	
 	
 	/*
-	 * Deep copy Contract object
+	 * @brief	Deep copy Contract object
+	 * @param	src - the source object to clone/copy
+	 * @return	the cloned object
 	 */
 	public static Contract clone(Contract src)
 	{
@@ -217,7 +228,9 @@ public class IBUtils
 	}
 	
 	/*
-	 * Deep copy TagValue object
+	 * @brief	Deep copy TagValue object
+	 * @param	src - the source object to clone/copy
+	 * @return	the cloned object
 	 */
 	public static TagValue clone(TagValue src)
 	{
@@ -254,7 +267,9 @@ public class IBUtils
 	
 	
 	/*
-	 * Deep copy ContractDetails object
+	 * @brief	Deep copy ContractDetails object
+	 * @param	src - the source object to clone/copy
+	 * @return	the cloned object
 	 */
 	public static ContractDetails clone(ContractDetails src)
 	{
@@ -301,7 +316,9 @@ public class IBUtils
 	
 	
 	/*
-	 * Deep copy OrderComboLeg object
+	 * @brief	Deep copy OrderComboLeg object
+	 * @param	src - the source object to clone/copy
+	 * @return	the cloned object
 	 */
 	public static OrderComboLeg clone(OrderComboLeg src)
 	{
@@ -336,7 +353,9 @@ public class IBUtils
 	}
 	
 	/*
-	 * Deep copy Order object
+	 * @brief	Deep copy Order object
+	 * @param	src - the source object to clone/copy
+	 * @return	the cloned object
 	 */
 	public static Order clone(Order src)
 	{
@@ -412,7 +431,9 @@ public class IBUtils
 
 	
 	/*
-	 * Deep copy OrderState object
+	 * @brief	Deep copy OrderState object
+	 * @param	src - the source object to clone/copy
+	 * @return	the cloned object
 	 */
 	public static OrderState clone(OrderState src)
 	{
@@ -447,7 +468,9 @@ public class IBUtils
 	}
 	
 	/*
-	 * Deep copy ScannerSubscription object
+	 * @brief	Deep copy ScannerSubscription object
+	 * @param	src - the source object to clone/copy
+	 * @return	the cloned object
 	 */
 	public static ScannerSubscription clone(ScannerSubscription src)
 	{
@@ -482,7 +505,9 @@ public class IBUtils
 	}
 	
 	/*
-	 * Deep copy UnderComp object
+	 * @brief	Deep copy UnderComp object
+	 * @param	src - the source object to clone/copy
+	 * @return	the cloned object
 	 */
 	public static UnderComp clone(UnderComp src)
 	{
