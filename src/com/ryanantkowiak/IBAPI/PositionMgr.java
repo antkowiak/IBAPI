@@ -1,5 +1,5 @@
 /**
- * 
+ * PositionMgr - Manager class to cache account positions
  */
 package com.ryanantkowiak.IBAPI;
 

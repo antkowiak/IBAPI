@@ -1,5 +1,5 @@
 /**
- * 
+ * TickSizeMgr - Manager class to cache tick sizes
  */
 package com.ryanantkowiak.IBAPI;
 
