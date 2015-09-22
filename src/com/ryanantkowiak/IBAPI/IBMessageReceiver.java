@@ -1,4 +1,5 @@
 /**
+ * @brief	Class that receives messages from TWS
  * 
  */
 
@@ -19,13 +20,20 @@ import com.ib.client.UnderComp;
 /**
  * @author Ryan Antkowiak (antkowiak@gmail.com)
  *
+ * @brief	Class that receives messages from TWS
  */
 public class IBMessageReceiver implements EWrapper
 {
+	/*
+	 * Listener objects
+	 */
 	public List<IBCommunicationListener> m_commmunicationListeners;
 	public List<IBErrorMessageListener> m_errorMessageListeners;
 	public List<IBTickListener> m_tickListeners;
 	
+	/*
+	 * @brief	Constructor
+	 */
 	public IBMessageReceiver()
 	{
 		m_commmunicationListeners = new ArrayList<IBCommunicationListener>();
@@ -33,6 +41,10 @@ public class IBMessageReceiver implements EWrapper
 		m_tickListeners = new ArrayList<IBTickListener>();
 	}
 	
+	/*
+	 * @brief	Add an IB Communication listener
+	 * @param	listener - the listener to add
+	 */
 	public void addIBCommmunicationListener(IBCommunicationListener listener)
 	{
 		synchronized (m_commmunicationListeners)
@@ -47,6 +59,10 @@ public class IBMessageReceiver implements EWrapper
 		}
 	}
 	
+	/*
+	 * @brief	Remove an IB Commnicaton listener
+	 * @param	listener - the listener to remove
+	 */
 	public void removeIBCommunicationListener(IBCommunicationListener listener)
 	{
 		synchronized (m_commmunicationListeners)
@@ -58,6 +74,10 @@ public class IBMessageReceiver implements EWrapper
 		}
 	}
 	
+	/*
+	 * @brief	Add an IB Error Message Listener
+	 * @param	listener - the IB Error Message Listener to add
+	 */
 	public void addIBErrorMessageListener(IBErrorMessageListener listener)
 	{
 		synchronized (m_errorMessageListeners)
@@ -72,6 +92,10 @@ public class IBMessageReceiver implements EWrapper
 		}
 	}
 	
+	/*
+	 * @brief	Remove an IB Error Message Listener
+	 * @param	listener - the IB Error Message Listener to remove
+	 */
 	public void removeIBErrorMessageListener(IBErrorMessageListener listener)
 	{
 		synchronized (m_errorMessageListeners)
@@ -83,6 +107,10 @@ public class IBMessageReceiver implements EWrapper
 		}
 	}
 	
+	/*
+	 * @brief	Add an IB Tick Listener
+	 * @param	listener - the IB Tick Listener to add
+	 */
 	public void addIBTickListener(IBTickListener listener)
 	{
 		synchronized (m_tickListeners)
@@ -97,6 +125,10 @@ public class IBMessageReceiver implements EWrapper
 		}
 	}
 	
+	/*
+	 * @brief	Remove an IB Tick Listener
+	 * @param	listener - the IB Tick Listener to remove
+	 */
 	public void removeIBTickListener(IBTickListener listener)
 	{
 		synchronized (m_tickListeners)
@@ -108,6 +140,10 @@ public class IBMessageReceiver implements EWrapper
 		}
 	}
 	
+	/*
+	 * @brief	Log an IB Function call
+	 * @param	text - the text of the function to log
+	 */
 	private void logFunction(String text)
 	{
 		synchronized (m_commmunicationListeners)
@@ -120,6 +156,10 @@ public class IBMessageReceiver implements EWrapper
 		}
 	}
 	
+	/*
+	 * @brief	Log the purpose of an IB Function
+	 * @param	text - the text string of the purpose
+	 */
 	private void logPurpose(String text)
 	{
 		synchronized (m_commmunicationListeners)
@@ -131,7 +171,10 @@ public class IBMessageReceiver implements EWrapper
 		}
 	}
 	
-	
+	/*
+	 * @brief	Log the parameters of an IB function
+	 * @param	objects - the parameters
+	 */
 	private void logParams(Object ... objects)
 	{
 		if (null != objects)
@@ -167,7 +210,13 @@ public class IBMessageReceiver implements EWrapper
 		}
 	}
 	
-
+	/*
+	 * (non-Javadoc)
+	 * @see com.ib.client.AnyWrapper#error(java.lang.Exception)
+	 * 
+	 * @brief	Log the error exception message
+	 * @param	e - the exception thrown
+	 */
 	public void error(Exception e)
 	{
 		logFunction("error(Exception e)");
@@ -183,6 +232,13 @@ public class IBMessageReceiver implements EWrapper
 		}
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.ib.client.AnyWrapper#error(java.lang.String)
+	 * 
+	 * @brief	Log an error message
+	 * @param	str - the string error message to log
+	 */
 	public void error(String str)
 	{
 		logFunction("error(String str)");
@@ -198,6 +254,15 @@ public class IBMessageReceiver implements EWrapper
 		}
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.ib.client.AnyWrapper#error(int, int, java.lang.String)
+	 * 
+	 * @brief	Log an error with an orderId, errorCode, and an error message
+	 * @param	id - the orderId
+	 * @param	errorCode - the error code
+	 * @param	errorMsg - the string error message
+	 */
 	public void error(int id, int errorCode, String errorMsg)
 	{
 		logFunction("error(int orderId, int errorCode, String errorMsg)");
