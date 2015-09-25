@@ -7,7 +7,7 @@
 package com.ryanantkowiak.IBAPI;
 
 /**
- * @author Ryan Antkowiak (antkowiak@gmail.com)
+ *	@author Ryan Antkowiak (antkowiak@gmail.com)
  *
  *	@class	IBLadderTraderConfig - 	Configuration of IB Ladder Trader, contains the account
  *									number, symbol, default quantity, and clientId
@@ -39,7 +39,6 @@ public class IBLadderTraderConfig
 	 */
 	public IBLadderTraderConfig()
 	{
-
 	}
 	
 	/*
