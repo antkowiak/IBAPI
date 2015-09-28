@@ -30,27 +30,53 @@ import com.ib.client.TagValue;
  */
 public class IBLadderTrader implements ActionListener, MouseListener, IBTickListener
 {
+	/*
+	 * Class to store price value in both cents (integer) and floating point
+	 */
 	private class Price
 	{
+		/*
+		 * Cents value in moneyu
+		 */
 		private int centsValue;
+		
+		/*
+		 * Money value in floating point
+		 */
 		private double moneyValue;
 		
+		/*
+		 *	@brief	Constructor that takes the money floating point parameter
+		 *	@param	d - the money amount as floating point
+		 */
 		public Price (double d)
 		{
 			moneyValue = d;
 			centsValue = (int) Math.round(d * 100);
 		}
 		
+		/*
+		 * 	@brief	Return the money value as floating point
+		 * 	@return	double - the money value
+		 */
 		public double getMoneyValue()
 		{
 			return moneyValue;
 		}
 		
+		/*
+		 * 	@brief	Return the cents value
+		 * 	@return	int - the cents value integer
+		 */
 		public int getCentsValue()
 		{
 			return centsValue;
 		}
 		
+		/*
+		 * 	@brief	Return a string representation of the money
+		 * 	@return	String - the string representation of the money value
+		 */
 		public String getStringValue()
 		{
 			if (centsValue == 0)
@@ -90,13 +116,27 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 			}
 		}
 		
+		/*
+		 * (non-Javadoc)
+		 * @see java.lang.Object#toString()
+		 */
 		public String toString()
 		{
 			return getStringValue();
 		}
 		
+		/*
+		 * 	@brief	Returns if the passed in object is equivalent
+		 * 	@param	rhs - the object to compare
+		 * 	@return	bool - true if the passed in object is equivalent
+		 */
 		public boolean equals(Price rhs)
 		{
+			if (null == rhs)
+			{
+				return false;
+			}
+			
 			return centsValue == rhs.centsValue;
 		}
 	}
