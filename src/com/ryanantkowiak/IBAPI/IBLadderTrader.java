@@ -141,11 +141,20 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 		}
 	}
 	
+	/*
+	 * The number of rows of the ladder trader prices to display at once
+	 */
 	private static final int NUM_ROWS = 25;
 	
+	/*
+	 * References to the IB message senders and receivers
+	 */
 	private IBMessageSender m_ibms;
 	private IBMessageReceiver m_ibmr;
 	
+	/*
+	 * Reference to the configuration of the IB Ladder Trader
+	 */
 	private IBLadderTraderConfig m_config;
 	
 	private final Object priceLock = new Object();
@@ -175,6 +184,13 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 	private JButton m_centerButton;
 	
   
+	/*
+	 * 	@brief	Constructor
+	 * 
+	 * 	@param	ibms - The IB Message Sender
+	 * 	@param	ibmr - The IB Message Receiver
+	 * 	@param	config - The configuration to use for ladder trader
+	 */
 	public IBLadderTrader(IBMessageSender ibms, IBMessageReceiver ibmr, IBLadderTraderConfig config)
 	{
 		m_config = new IBLadderTraderConfig(config);
@@ -202,6 +218,10 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 	}
 
 	
+	/*
+	 * 	@brief	Re-center the display of the price ladder around the given center price
+	 * 	@param	centerPrice - the price to display in the middle when re-centering the ladder
+	 */
 	public void recenter(Price centerPrice)
 	{
 		synchronized (priceLock)
@@ -243,7 +263,9 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 	}
 	
 	
-	
+	/*
+	 * 	@brief	Creates all screen elements for ladder trader
+	 */
 	private void createScreen()
 	{
 		
@@ -285,7 +307,6 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 			m_sellButtons[i].addActionListener(this);
 			m_panel.add(m_sellButtons[i]);
 		}
-		
 		
 		
 		m_panel.add(new JLabel());
@@ -331,6 +352,9 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 		recenter(new Price((NUM_ROWS / 200.0)));
 	}
 	
+	/*
+	 * 	@brief	Disable all the buttons on the ladder trader display
+	 */
 	private void disableAllButtons()
 	{
 		for (int i = 0 ; i < NUM_ROWS ; ++i)
@@ -347,6 +371,9 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 		m_centerButton.setEnabled(false);
 	}
 	
+	/*
+	 * 	@brief	Enable all the buttons on the ladder trader display
+	 */
 	private void enableAllButtons()
 	{
 		for (int i = 0 ; i < NUM_ROWS ; ++i)
@@ -363,6 +390,10 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 		m_centerButton.setEnabled(true);
 	}
 
+	/*
+	 * 	@brief	Handle a press on a button to send a Buy Order at an index
+	 * 	@param	index - the button number index for the buy order
+	 */
 	private void handleBuyButton(int index)
 	{
 		synchronized (priceLock)
@@ -372,6 +403,10 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 		}
 	}
 	
+	/*
+	 * 	@brief	Handle a press on a button to send a Sell Order at an index
+	 * 	@param	index - the button number index for the sell order
+	 */
 	private void handleSellButton(int index)
 	{
 		synchronized (priceLock)
@@ -381,7 +416,9 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 		}
 	}
 	
-
+	/*
+	 * 	@brief	handle a press on the button to scroll the price ladder up
+	 */
 	private void handleUpButton()
 	{
 		synchronized (priceLock)
@@ -390,6 +427,9 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 		}
 	}
 	
+	/*
+	 * 	@brief	handle a press on the button to scroll the price ladder down
+	 */
 	private void handleDownButton()
 	{
 		synchronized (priceLock)
