@@ -417,7 +417,7 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 	}
 	
 	/*
-	 * 	@brief	handle a press on the button to scroll the price ladder up
+	 * 	@brief	Handle a press on the button to scroll the price ladder up
 	 */
 	private void handleUpButton()
 	{
@@ -428,7 +428,7 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 	}
 	
 	/*
-	 * 	@brief	handle a press on the button to scroll the price ladder down
+	 * 	@brief	Handle a press on the button to scroll the price ladder down
 	 */
 	private void handleDownButton()
 	{
@@ -438,11 +438,17 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 		}
 	}
 	
+	/*
+	 * 	@brief	Handle a press on the button to cancel all orders
+	 */
 	private void handleCancelAllButton()
 	{
 		m_ibms.reqGlobalCancel();
 	}
 	
+	/*
+	 * 	@brief	Handle a press on the button to reverse the position
+	 */
 	private void handleRevButton()
 	{
 		int currentPosition = 0;
@@ -483,6 +489,9 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 		}
 	}
 	
+	/*
+	 * 	@brief	Handle a press on the button to flatten your position
+	 */
 	private void handleFlatButton()
 	{
 		int currentPosition = 0;
@@ -523,6 +532,9 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 		}
 	}
 	
+	/*
+	 * 	@brief	Handle a press on the button to center the price ladder
+	 */
 	private void handleCenterButton()
 	{
 		synchronized (priceLock)
@@ -534,7 +546,12 @@ public class IBLadderTrader implements ActionListener, MouseListener, IBTickList
 		}
 	}
 	
-	
+	/*
+	 * 	@brief	Place a stock limit order
+	 * 	@param	side - the side to BUY or SELL
+	 * 	@param	quantity - the number of shares to buy or sell
+	 * 	@param	limitPrice - the limit price for the order
+	 */
 	private int placeStockLimitOrder(String side, int quantity, Price limitPrice)
 	{
 		if (side != "BUY" && side != "SELL")
