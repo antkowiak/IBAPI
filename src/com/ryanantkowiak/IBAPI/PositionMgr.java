@@ -9,7 +9,7 @@ import java.util.Map;
 import com.ib.client.Contract;
 
 /**
- * @author Ryan Antkowiak (antkowiak@gmail.com)
+ * @author Ryan Antkowiak 
  *
  */
 public class PositionMgr

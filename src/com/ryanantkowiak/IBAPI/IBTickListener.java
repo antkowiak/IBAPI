@@ -5,7 +5,7 @@
 package com.ryanantkowiak.IBAPI;
 
 /**
- * @author Ryan Antkowiak (antkowiak@gmail.com)
+ * @author Ryan Antkowiak 
  *
  */
 public interface IBTickListener

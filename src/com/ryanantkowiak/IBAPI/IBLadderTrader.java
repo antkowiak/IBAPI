@@ -25,7 +25,7 @@ import com.ib.client.Contract;
 import com.ib.client.TagValue;
 
 /**
- * @author Ryan Antkowiak (antkowiak@gmail.com)
+ * @author Ryan Antkowiak 
  *
  */
 public class IBLadderTrader implements ActionListener, MouseListener, IBTickListener

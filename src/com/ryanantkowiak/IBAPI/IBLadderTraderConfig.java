@@ -1,13 +1,13 @@
 /**
  * 	@brief	Implementation of the IBLatterTraderConfig class
  * 
- * 	@author Ryan Antkowiak (antkowiak@gmail.com)
+ * 	@author Ryan Antkowiak 
  * 
  */
 package com.ryanantkowiak.IBAPI;
 
 /**
- *	@author Ryan Antkowiak (antkowiak@gmail.com)
+ *	@author Ryan Antkowiak 
  *
  *	@class	IBLadderTraderConfig - 	Configuration of IB Ladder Trader, contains the account
  *									number, symbol, default quantity, and clientId

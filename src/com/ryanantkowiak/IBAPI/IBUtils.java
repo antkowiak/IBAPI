@@ -20,7 +20,7 @@ import com.ib.client.TagValue;
 import com.ib.client.UnderComp;
 
 /**
- * @author 	Ryan Antkowiak (antkowiak@gmail.com)
+ * @author 	Ryan Antkowiak 
  * 
  * @brief	Utility functions, mostly for deep copying/cloning of IB data structures
  */

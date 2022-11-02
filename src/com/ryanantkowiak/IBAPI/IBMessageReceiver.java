@@ -18,7 +18,7 @@ import com.ib.client.OrderState;
 import com.ib.client.UnderComp;
 
 /**
- * @author Ryan Antkowiak (antkowiak@gmail.com)
+ * @author Ryan Antkowiak 
  *
  * @brief	Class that receives messages from TWS
  */

@@ -13,7 +13,7 @@ import com.ib.client.Order;
 import com.ib.client.TagValue;
 
 /**
- * @author Ryan Antkowiak (antkowiak@gmail.com)
+ * @author Ryan Antkowiak 
  *
  */
 public class IBMessageSender
